@@ -1,0 +1,3 @@
+GET https://api.cloudflare.com/client/v4/accounts/WORKER_ACCOUNT_ID/storage/kv/namespaces/NAMESPACE_ID/values/ab-config HTTP/1.1
+X-Auth-Email: EMAIL
+X-Auth-Key: API_KEY

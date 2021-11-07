@@ -1,0 +1,26 @@
+PUT https://api.cloudflare.com/client/v4/accounts/WORKER_ACCOUNT_ID/workers/scripts/ab-test HTTP/1.1
+X-Auth-Email: EMAIL
+X-Auth-Key: API_KEY
+Content-Type: multipart/form-data; boundary=MyBoundary
+
+--MyBoundary
+Content-Disposition: form-data; name="metadata"
+Content-Type: application/json
+
+{
+  "body_part": "script",
+  "bindings": [
+    {
+      "type": "kv_namespace",
+      "name": "DATA_STORE",
+      "namespace_id": "NAMESPACE_ID"
+    }
+  ]
+}
+
+--MyBoundary
+Content-Disposition: form-data; name="script"; filename="createWorker.js"
+Content-Type: application/javascript
+
+< ./createWorker.js
+--MyBoundary--
