@@ -1,6 +1,6 @@
-PUT https://api.cloudflare.com/client/v4/accounts/WORKER_ACCOUNT_ID/workers/scripts/ab-test HTTP/1.1
-X-Auth-Email: EMAIL
-X-Auth-Key: API_KEY
+PUT https://api.cloudflare.com/client/v4/accounts/{{$dotenv ACCOUNT_ID}}/workers/scripts/{{$dotenv WORKER_SCRIPT_NAME}} HTTP/1.1
+X-Auth-Email: {{$dotenv EMAIL}}
+X-Auth-Key: {{$dotenv API_KEY}}
 Content-Type: multipart/form-data; boundary=MyBoundary
 
 --MyBoundary
@@ -13,7 +13,7 @@ Content-Type: application/json
     {
       "type": "kv_namespace",
       "name": "DATA_STORE",
-      "namespace_id": "NAMESPACE_ID"
+      "namespace_id": "ENTER_NAMESPACE_ID"
     }
   ]
 }

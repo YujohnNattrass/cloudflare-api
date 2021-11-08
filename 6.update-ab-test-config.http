@@ -1,0 +1,12 @@
+PUT https://api.cloudflare.com/client/v4/accounts/{{$dotenv ACCOUNT_ID}}/storage/kv/namespaces/{{$dotenv NAMESPACE_ID}}/values/ab-config HTTP/1.1
+X-Auth-Email: {{$dotenv EMAIL}}
+X-Auth-Key: {{$dotenv API_KEY}}
+Content-Type: application/json
+
+{
+  "split": 25,
+  "controlUrl": "cloudflare-test-8xr.pages.dev",
+  "controlGA": "<!-- Global site tag (gtag.js) - Google Analytics --><script async src=\"https://www.googletagmanager.com/gtag/js?id=G-HLFZY8MZCW\"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);}gtag('js', new Date());gtag('config', 'G-HLFZY8MZCW');</script>",
+  "testUrl": "adf09210.cloudflare-test-8xr.pages.dev",
+  "testGA": "<!-- Global site tag (gtag.js) - Google Analytics --><script async src=\"https://www.googletagmanager.com/gtag/js?id=G-LTZ13SVKRM\"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'G-LTZ13SVKRM'); </script>"
+}

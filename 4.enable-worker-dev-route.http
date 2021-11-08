@@ -1,0 +1,8 @@
+POST https://api.cloudflare.com/client/v4/accounts/{{$dotenv ACCOUNT_ID}}/workers/scripts/{{$dotenv WORKER_SCRIPT_NAME}}/subdomain HTTP/1.1
+X-Auth-Email: {{$dotenv EMAIL}}
+X-Auth-Key: {{$dotenv API_KEY}}
+Content-Type: application/json
+
+{
+  "enabled": true
+}

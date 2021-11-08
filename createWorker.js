@@ -12,7 +12,6 @@ async function handleRequest(request) {
 
   // Fetch config file from Worker KV and assign to 'abConfig'
   const abConfig = await DATA_STORE.get('ab-config', {type: 'json'});
-  const name = 'experiment-0';
   const host = request.headers.get("host");
   const controlUrl = request.url.replace(host, abConfig.controlUrl);
   const controlGA = abConfig.controlGA;
@@ -39,7 +38,7 @@ async function handleRequest(request) {
 
 
   // If a 'experiment-0' cookie does not exist
-  const group = Math.random() < abConfig.split ? 'test' : 'control'
+  const group = (Math.random() * 100)< abConfig.split ? 'test' : 'control'
 
   if (group === 'control') {
     res = await fetch(controlUrl, request)
