@@ -12,11 +12,14 @@ async function handleRequest(request) {
 
   // Fetch config file from Worker KV and assign to 'abConfig'
   const abConfig = await DATA_STORE.get('ab-config', {type: 'json'});
-  const controlUrl = abConfig.controlUrl;
+  const name = 'experiment-0';
+  const host = request.headers.get("host");
+  const controlUrl = request.url.replace(host, abConfig.controlUrl);
   const controlGA = abConfig.controlGA;
-  const testUrl = abConfig.testUrl;
+  const testUrl = request.url.replace(host, abConfig.testUrl);
   const testGA = abConfig.testGA;
   const cookie = request.headers.get('cookie');
+
 
   // If a 'experiment-0' cookie exist
   let res;

@@ -6,8 +6,8 @@ Content-Type: application/json
 
 {
   "split": 50,
-  "controlUrl": "ENTER CONTROL URL",
+  "controlUrl": "ENTER CONTROL URL DO NOT ADD HTTPS OR ENDING /",
   "controlGA": "ENTER Google Analytic SCRIPT AND REMOVE NEWLINE CHARACTERS",
-  "testUrl": "ENTER TEST URL",
+  "testUrl": "ENTER CONTROL URL DO NOT ADD HTTPS OR ENDING /",
   "testGA": "ENTER Google Analytic SCRIPT AND REMOVE NEWLINE CHARACTERS"
 }
